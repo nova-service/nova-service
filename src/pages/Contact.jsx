@@ -41,6 +41,15 @@ const Contact = () => {
         }
 
         setErrors({});
+
+        // Construct WhatsApp message
+        const phoneNumber = "491707864074";
+        const message = `Halo Nova Service Team,\n\nIch habe eine neue Kontaktanfrage:\n\n*Name:* ${formData.name}\n*E-Mail:* ${formData.email}\n*Nachricht:* ${formData.message}`;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+        // Open WhatsApp in a new tab
+        window.open(whatsappUrl, '_blank');
+
         setShowCelebration(true);
         // Clear form after success
         setFormData({ name: '', email: '', message: '' });
@@ -142,7 +151,7 @@ const Contact = () => {
                                 </svg>
                             </div>
                             <h3 className="text-lg font-black text-gray-900 mb-1 tracking-tight">Call Us</h3>
-                            <p className="text-sm text-gray-500 font-bold">+49 (0) 123 456789</p>
+                            <p className="text-sm text-gray-500 font-bold">+49 170 7864074</p>
                         </div>
                         <div className="p-8 bg-white rounded-3xl shadow-lg shadow-gray-100 border border-gray-50 hover:border-lime-500 transition-all group cursor-pointer">
                             <div className="w-12 h-12 bg-lime-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-lime-500 transition-colors">
